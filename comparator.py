@@ -51,7 +51,7 @@ def main():
         processor1 = str(input("Digite o nome do primeiro processador: ")).strip()
         processor2 = str(input("Digite o nome do segundo processador: ")).strip()
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        excel_file_path = os.path.join(script_dir, "dataset02.xlsx")
+        excel_file_path = os.path.join(script_dir, "dataset03.xlsx")
         bedrock_client = boto3.client(service_name='bedrock-runtime')
     except Exception as e:
         print(f"Erro ao conectar com o cliente do Boto3: {e}")
@@ -113,7 +113,7 @@ def main():
 
         # Define a margem y para o terceiro gráfico
         if i == 2:
-            ax.set_ylim([0, 3000])  # Define a margem dos valores do eixo y para 3000 pontos
+            ax.set_ylim([0, 5000])  # Define a margem dos valores do eixo y para 5000 pontos
 
         ax.set_title(f'Comparison of {processor1_info.get("CPU_Name")} and {processor2_info.get("CPU_Name")} - Attributes: {", ".join(attributes)}')
         ax.set_xticks([i + bar_width / 2 for i in index])
